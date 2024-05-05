@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultat de Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+    	 body{
+    	    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    body > img {
+   	padding: 30px;
+   }
+    </style>
+</head>
+<body>
+<img src="http://ene.fpt.ac.ma/logo3_new3[172].png" style="height:70px"/>
+<div>
+    <h2>Évolution de la fidélité</h2>
+    <img src="{{ plot_path }}?{{ timestamp }}" alt="Évolution de la fidélité">
+</div>
+    <!-- Display the heatmap image -->
+<div>
+    <h2>Heatmap de la matrice de transition</h2>
+    <img src="{{ heatmap_path }}?{{ timestamp }}" alt="Transition Matrix Heatmap">
+</div>
+<!-- Display the heatmap image -->
+<div>
+    <h2>Histogramme des pourcentages de fidélité à travers tous les pas de temps pour chaque Bank</h2>
+    <img src="{{ histogram_path }}?{{ timestamp }}" alt="Histogramme des pourcentages de fidélité à travers tous les pas de temps pour chaque entreprise">
+</div>
+<!-- Display the heatmap image -->
+<div>
+    <h2>Diagramme circulaire pour les pourcentages de fidélité au dernier pas de temps</h2>
+    <img src="{{ pie_path }}?{{ timestamp }}" alt="Diagramme circulaire pour les pourcentages de fidélité au dernier pas de temps">
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markov Chain Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <style>
+    	
+    	.my-form, body{
+    	    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .my-form > input {
+    	width:700px !important;
+    }
+    
+   body > img {
+   	padding: 30px;
+   }
+    
+    </style>
+    
+</head>
+<body>
+<img src="http://ene.fpt.ac.ma/logo3_new3[172].png" style="height:70px"/>
+    <h1>Simulation de chaîne de Markov</h1>
+    <form action="/simulate" method="post" class="my-form">
+        <h2>Matrice de Probabilités de Transition</h2>
+        <table>
+            <tr>
+                <td><input type="text" name="p11" value="0.8"></td>
+                <td><input type="text" name="p12" value="0.1"></td>
+                <td><input type="text" name="p13" value="0.1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="p21" value="0.2"></td>
+                <td><input type="text" name="p22" value="0.6"></td>
+                <td><input type="text" name="p23" value="0.2"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="p31" value="0.1"></td>
+                <td><input type="text" name="p32" value="0.2"></td>
+                <td><input type="text" name="p33" value="0.7"></td>
+            </tr>
+        </table>
+        
+        <h2>État initial</h2>
+        <div class="my-form">
+        <label for="s1">BMCE:</label>
+        <input type="text" name="s1" value="1"><br>
+        
+        <label for="s2">ATTIJARIWAFA BANK:</label>
+        <input type="text" name="s2" value="0"><br>
+        
+        <label for="s3">CIH:</label>
+        <input type="text" name="s3" value="0"><br>
+
+        <label for="steps">Nombre de Transitions:</label>
+        <input type="number" id="steps" name="steps" value="100" min="1">
+
+        <input type="submit" value="Simulate">
+        </div>
+    </form>
+</body>
+</html>
